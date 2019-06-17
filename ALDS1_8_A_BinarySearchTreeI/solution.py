@@ -32,18 +32,16 @@ class Tree:
     def inorder(self, node):
         if node is None: return  # noqa
         self.inorder(node.left)
-        self.node_list.append(node)
+        self.node_list.append(node.key)
         self.inorder(node.right)
-        keys = [node.key for node in self.node_list]
-        return keys
+        return self.node_list
 
     def preorder(self, node):
         if node is None: return # noqa
-        self.node_list.append(node)
+        self.node_list.append(node.key)
         self.preorder(node.left)
         self.preorder(node.right)
-        keys = [node.key for node in self.node_list]
-        return keys
+        return self.node_list
 
 
 if __name__ == '__main__':
